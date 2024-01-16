@@ -13,23 +13,22 @@ $pks_gallery_one = get_field('pks_gallery_one');
     }
 
 
+        // another problem maximum 5 index in each array
 
-
-        // another problem 
-
-
-
-
-
-	$gallery_img_url 	= [];
-	$itemsPerSubArr = 5;
-	$numberOfSubArr = ceil(count($gallery_img_url) / $itemsPerSubArr);
-	$gallery_images 	 = array_fill(0, $numberOfSubArr, []);
-	for ($i = 0; $i < count($gallery_img_url); $i++) {
-		$index = floor($i / $itemsPerSubArr);
-		$gallery_images[$index][] = $gallery_img_url[$i];
+	$arr        = [1, 2, 3, 334, 5, 6, 7, 8, 9, 10, 131];
+	$total      = count($arr);
+	
+	$my2DArray = [];
+	
+	for ($j = 0; $j < $total; $j++) {
+	    $indexed                = floor($j / 5);
+	    $my2DArray[$indexed][]  = $arr[$j];
 	}
-
+	
+	echo '<pre>';
+	print_r($my2DArray);
+	echo '</pre>';
+	
 
 
         
